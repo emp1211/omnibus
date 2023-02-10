@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head'); %>
+    </head>
+
+    <body> 
+        <header>
+
+            <% if (userData.loggedIn) { %>
+
+                <%- include('./partials/header-logged-in'); %>
+
+            <%  } else { %>
+
+                <%- include('./partials/header-logged-out'); %>
+
+            <%  } %>
+
+        </header>
+
+        
+        <% if (userData.username) { %>
+
+            <div class="sub-header">You are shopping as <%= userData.username %>.</div>
+
+        <%  } else { %>
+
+            <div class="sub-header"><a href="/login">Login</a>&#160;to checkout.</div>
+
+        <%  } %>
+
+      
+
+        <main class="products-banner">
+            <div class="filters">
+                <p class="filter-heading">Filters</p>
+                <form id="filters-to-display">
+                    <fieldset>
+                        <legend>By Manufacturer</legend>
+                            <input type="checkbox" name="manufacturer" id="apple">
+                            <label for="apple">Apple</label><br>
+                            <input type="checkbox" name="manufacturer" id="samsung">
+                            <label for="samsung">Samsung</label><br>
+                            <input type="checkbox" name="manufacturer" id="motorola">
+                            <label for="motorola">Motorola</label><br>
+                            <input type="checkbox" name="manufacturer" id="google">
+                            <label for="google">Google</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>By Price</legend>
+                            <input type="checkbox" name="manufacturer" id="filter-sub-500">
+                            <label for="filter-sub-500">Up to $500</label><br>
+                            <input type="checkbox" name="manufacturer" id="filter500">
+                            <label for="filter500">$500 — $600</label><br>
+                            <input type="checkbox" name="manufacturer" id="filter600">
+                            <label for="filter600">$600 — $700</label><br>
+                            <input type="checkbox" name="manufacturer" id="filter700">
+                            <label for="filter700">Over $700</label><br>
+                        
+                    </fieldset>
+                </form>
+                
+            </div>
+
+            <div class="tile-container">
+
+                <% productData.forEach((product) => { %>
+
+                    <div class="product-tile">
+                        <div class="product-name"><%= product.name %></div>
+                        <div class="product-img">
+                            <img src="<%- product.img %>" alt="a smartphone">
+                        </div>
+                        <div class="product-details">
+                            <p class="price">$<%= product.price %></p>
+                            <p><%= product.description %></p>
+                            <span class="manufacturer" hidden><%= product.manufacturer %></span>
+                        </div>
+                        
+                        <form action="/cart" method="post">
+                            <input type="hidden" name="product_id" value="<%- product.product_id %>" />
+                            <input type="hidden" name="name" value="<%- product.name %>" />
+                            <input type="hidden" name="price" value="<%- product.price %>" />
+                            <input type="hidden" name="quantity" value="1" />
+                            <input type="submit" value="Add to Cart" />
+
+                        </form>
+                     </div>
+
+                <%  }) %>
+
+            </div>
+           
+        </main>
+    
+
+    <script src="/js/script.js" type="text/javascript" ></script>
+    <script src="/js/dropdown.js" type="text/javascript"></script>  
+    <script src="/js/filters.js" type="text/javascript"></script>  
+        
+
+
+    </script>
+    </body>
+</html>

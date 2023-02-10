@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head'); %>
+    </head>
+
+    <body> 
+        <header>
+
+            <% if (userData.loggedIn) { %>
+
+                <%- include('./partials/header-logged-in'); %>
+
+            <%  } else { %>
+
+                <%- include('./partials/header-logged-out'); %>
+
+            <%  } %>
+
+        </header>
+        <div class="sub-header"></div>
+
+        <h2 class="order-history">Your Order History</h2>
+        
+        <div class="orders-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="table-header">Order No.</th>
+                        <th class="table-header">Total</th>
+                        <th class="table-header">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                <%   orders.forEach((order) => { %>
+
+                        <tr>
+                            <td class="quantity-col"><%= order.order_id %></td>
+                            <td class="quantity-col"><%= order.total %></td>
+                            <td class="quantity-col"><%= order.order_date %></td>
+                        </tr>
+                        
+
+                    <%  }) %> 
+
+
+                </tbody>
+
+            </table>
+        </div>
+
+
+        <script src="/js/dropdown.js" type="text/javascript"></script>  
+    </body>
+  </html>

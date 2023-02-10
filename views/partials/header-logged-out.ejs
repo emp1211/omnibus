@@ -1,0 +1,40 @@
+<div id="logo-container" href="/">
+    <a class="drop-container" href="/">
+        <img id="logo" src="/imgs/favicon-blue.jpg" alt="company logo: a black and white globe">
+        <span id="logo-title">mnibus</span>
+    </a>
+    <button>
+        <img id="hamburger" src="imgs/hamburger.svg" alt="">
+    </button>
+</div>
+
+<nav>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+    <a href="/products">Shop</a>
+    <a href="/cart">
+        <img src="/imgs/shopbag.png" alt="shopping cart icon">
+        
+        <% if ((cartCount !== undefined) && (cartCount > 0)) { %> 
+       
+            <p id="cart-count">cart(<%= cartCount %>)</p> 
+
+       <%  } %>
+   
+    </a>
+</nav>
+
+<div class="dropdown-nav">
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+    <a href="/products">Shop</a>
+    <a href="/cart">Cart
+
+        <% if ((cartCount !== undefined) && (cartCount > 0)) { %> 
+       
+            <span id="cart-count">(<%= cartCount %>)</span> 
+
+       <%  } %>
+
+    </a>
+</div>

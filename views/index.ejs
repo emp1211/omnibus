@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head'); %>
+    </head>
+
+    <body> 
+        <header>
+
+            <% if (userData.loggedIn) { %>
+
+                <%- include('./partials/header-logged-in'); %>
+
+            <%  } else { %>
+
+                <%- include('./partials/header-logged-out'); %>
+
+            <%  } %>
+
+        </header>
+
+        <main class="landing-banner">
+            <div class="main main-wrapper">
+                <p class="welcome-to">Welcome to</p>
+                <p class="omnibus">Omnibus</p>
+                <p class="cellular"> cellular</p>
+                <p class="oc-description" >Dislaimer: This is a mock website for web development purposes only. Omnibus Cellular is the world's leading provider of smartphones and accessories.</p>
+                <div class="enter-store">
+                    <a href="/products">enter store</a>
+                </div> 
+            </div>
+        </main>
+    
+
+      <script src="/js/dropdown.js" type="text/javascript"></script>  
+    </body>
+</html>

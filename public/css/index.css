@@ -1,0 +1,843 @@
+
+
+/* UNIVERSAL STYLES */
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+html, body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    color: rgb(66, 66, 66)
+}
+
+
+
+/* HEADER AND NAVIGATION */
+
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    color: rgb(75, 105, 178);
+    z-index: 5;
+}
+
+header a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(75, 105, 178);
+    margin-right: 1rem;
+    font-weight: 600;
+}
+
+header button {
+    display: none;
+}
+
+.dropdown-nav{
+    display: none;
+}
+
+
+#logo-container {
+    margin-left: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    margin-left: 1rem;
+    height: 3.4rem;
+    width: 3.4rem;
+}
+
+#logo-title {
+    text-transform: none;
+    font-size: 2.4rem;
+    font-weight: 600;
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+nav a {
+    font-size: 1.4rem;
+    padding: 0 1.4rem;
+    text-align: center;
+}
+
+
+nav img {
+    width: 1.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+#cart-count {
+    margin-top: -0.4rem;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.sub-header {
+    width: 100%;
+    height: 2.5rem;
+    background-color: rgb(184, 184, 184);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN SECTION */
+
+
+main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-top: -6rem;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.landing-banner {     /* this is the main element  */
+    background-image: url('../imgs/omnibus-landing-wide.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.main-wrapper {
+    background-color: transparent;
+    height: 22rem;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+
+
+.main {
+    margin-top: 12rem;
+    margin-right: 8rem;
+    max-width: 28rem;
+    padding: 1px;
+}
+
+.welcome-to, .omnibus, .cellular, .oc-description {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    /* margin: -0.4rem; */
+}
+
+.welcome-to {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.omnibus {
+    font-size: 4.6rem;
+    font-weight: 600;
+}
+
+.cellular {
+    margin-bottom: 1rem;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.oc-description {
+    font-size: 1.2rem;
+    letter-spacing: .5px;
+    text-align: right;
+    font-weight: 500;
+    max-width: 26.2rem;
+}
+
+.enter-store {
+    margin-top: 3rem;
+    border-radius: 2rem;
+    background-color: green;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem;
+    width: 10rem;
+    text-align: center;
+}
+
+.enter-store a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+
+
+/* LOGIN.EJS AND REGISTER.EJS*/
+
+
+.banner {
+    background-image: url('../imgs/background-light.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container, .register-container {
+    background-color: rgb(49, 68, 117);
+    border-radius: 12px;
+    padding: 4rem;
+    box-shadow: 0 0 12px black;
+}
+
+.login-container {
+    max-height: 16rem;
+}
+
+.register-container {
+    max-height: 21rem;
+    margin-top: 1.4rem;
+}
+
+.login-container input, .login-container label, .register-container input, .register-container label {
+    padding: 0.2rem;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.login-container label, .register-container label {
+    text-align: left;
+    color: rgb(210, 210, 210);
+    margin-bottom: -0.1rem;
+}
+
+.login-container input, .register-container input {
+    margin-bottom: 1.2rem;
+    border-radius: 4px;
+}
+
+.submit {
+    background-color: rgb(182, 182, 182);
+    border: solid rgb(75, 75, 75) 1px;
+    margin: 2.4rem auto;
+    height: 2.6rem;
+}
+
+.login-submit {
+    width: 6rem;
+}
+
+.create-account {
+    width: 12rem;
+}
+  
+.submit:hover {
+    cursor: pointer;
+}
+
+.submit:active {
+    cursor: pointer;
+    background-color: rgb(112, 112, 112);
+    border: solid rgb(175, 175, 175) 1px;
+}
+
+
+/* PRODUCTS.EJS */
+
+
+.sub-header a {
+    color: rgb(122, 122, 215);
+}
+
+.products-banner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-shrink: 1;
+    background-color: rgb(244, 246, 252);
+    height: auto;
+    margin-top: 0;
+}
+
+.filters {
+    top: -4;
+    width: 18rem;
+    left: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.filter-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 0.6rem 0;
+    border: 1px solid rgb(91, 91, 91);
+    margin: 1rem 0;
+    border-radius: 8px;
+}
+
+.filter-heading, .filters fieldset, .filters form {
+    width: 100%;
+}
+
+.filters fieldset {
+    margin: 1.4rem 0;
+    padding: 0.4rem 0;
+}
+
+.filters legend {
+    text-align: center;
+}
+
+.filters input {
+    margin: 0.5rem;
+}
+
+.tile-container {
+    margin-top: 1.2rem;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid rgb(198, 198, 198) 1px;
+    background-color: white;
+    width: 14rem;
+    height: 30rem;
+    margin: 1rem 1rem;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 0 10px black;
+    border: 1px solid rgb(74, 74, 74);
+}
+
+.product-tile:hover {
+    border: solid black 1px;
+}
+
+.product-name {
+    font-size: 0.9rem;
+    color: white;
+    background-color: rgb(74, 74, 74);
+    padding: 0.5rem 0;
+    width: 14rem;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.product-tile .price {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.product-img img {
+    max-height: 12rem;
+    margin: 0.2rem;
+    margin-top: 1rem;
+}
+
+.product-details {
+    padding: 0.5rem 0.2rem;
+}
+
+.product-tile p {
+    margin: 1rem 0; 
+}
+
+.product-tile input {
+    background-color: rgb(75, 105, 178);
+    box-shadow: 0 0 4px rgb(0, 0, 0);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 0 3rem 0;
+    text-align: center;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    border: none;
+}
+
+.product-tile input:hover {
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.product-tile input:active {
+    box-shadow: none;
+}
+
+
+/* CART.EJS */
+
+
+.table-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+table {
+    margin-top: 4rem;
+}
+
+td, th {
+    margin: 0;
+}
+
+.table-header {
+    background-color: lightgray;
+}
+
+table td, table th {
+    text-align: left;
+    padding: 0.6rem 2rem;
+    border-bottom: solid 1px lightgray;
+}
+
+.quantity-col {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.quantity-col form {
+    display: inline;
+}
+
+.quantity-col input {
+    padding: 0.1rem;
+    margin: 0 1rem;
+    width: 1.2rem;
+}
+
+.total-col {
+    text-align: right;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.to-checkout-container {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.to-checkout-container .submit {
+    border-radius: 4px;
+    padding: 0 0.6rem;
+    height: 2.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1rem;
+    background-color: lightgray;
+}
+
+
+/* CHECKOUT.EJS */
+
+
+.checkout-container {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.checkout-container p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.checkout-container form {
+    background-color: rgb(238, 238, 238);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.checkout-container label, .checkout-container select {
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.checkout-container input {
+    width: 24rem;
+    height: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.cc-main-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cc-container {
+    display: inline;
+    width: 8rem;
+}
+
+.cc-container label {
+    width: 8rem;
+}
+
+#cc-number {
+    width: 12rem;
+    display: block;
+}
+
+#expiry-date {
+    width: 7rem;
+    display: block;
+}
+
+#place-order {
+    background-color: rgb(75, 105, 178);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 3rem;
+    border: none;
+}
+
+#place-order:hover {
+    border: white solid 2px;
+}
+
+#place-order:active {
+    background-color: rgb(122, 122, 215);
+}
+
+.order-summary {
+    border: solid black 1px;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-left: 1.4rem;
+}
+
+.order-summary table {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    width: 26rem;
+}
+
+.order-summary td, .order-summary th, .order-summary button .order-summary input, .order-summary form {
+    font-size: 0.9rem;
+    background-color: white;
+    height: 100%;
+    margin: 0;
+}
+
+.order-summary form{
+    padding: 0;
+    margin: 0;
+}
+
+
+/* ACCOUNT.EJS */
+
+
+.account-banner {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(244, 246, 252);
+    margin: 0;
+    padding: 0;
+}
+
+.account-hello {
+    text-align: center;
+    margin: 0;
+    padding: 1.8rem 0;
+}
+
+.account-tile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.account-tiles {
+    border: 1px rgb(79, 79, 79) solid;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgb(69, 69, 69);
+    padding: 2rem 0;
+    width: 16rem;
+    text-align: center;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.account-tiles img {
+    width: 2.6rem;
+}
+
+.account-tiles span {
+    margin: 0 1.6rem;
+    color: black;
+    font-size: 1.2rem;
+}
+
+
+/* CONFIRMATION.EJS */
+
+.flex-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(244, 246, 252);
+    display: flex;
+    justify-content: center;
+}
+
+.confirmation-container {
+    margin-top: 2rem;
+    text-align: center;
+    border: solid black 1px;
+    border-radius: 6px;
+    max-width: 24rem;
+    background-color: white;
+    padding: 2rem 2rem;
+    max-height: 12rem;
+}
+
+/* ORDERS.EJS */
+
+
+.orders-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.orders-table-container table {
+    margin-top: 1rem;
+}
+
+.orders-table-container th {
+    text-align: center;
+}
+
+.order-history {
+    text-align: center;
+}
+
+
+/* Media queries */
+
+
+@media only screen and (max-width: 1320px) {
+    .landing-banner {
+        background-image: url(../imgs/omnibus-landing.jpg);
+    }
+
+    .main {
+        margin-right: 3.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+    .landing-banner {
+        background-image: url(../imgs/omnibus-landing-medium.jpg);
+    }
+
+    .main {
+        margin-right: 1.75rem;
+    }
+
+}
+
+@media only screen and (max-width: 920px) {
+
+    .landing-banner {
+        background-image: url(../imgs/landing-mobile.jpg);
+        align-items: flex-start;
+    }
+
+    .banner {
+        background-image: url('../imgs/landing-mobile.jpg');
+    }
+
+    .main {
+        margin: 0;
+        text-align: center;
+    }
+
+    .main-wrapper {
+        justify-content: center;
+    }
+
+    .landing-banner {
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .oc-description {
+        width: 90%;
+        text-align: center;
+    }
+
+    .login-container, .register-container {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-container form, .register-container form {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .products-banner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Hide 'mnibus' in logo-title */
+    #logo-container {
+        margin-left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #logo {
+        margin-left: 0px;
+        height: 1.8rem;
+        width: 1.8rem;
+    }
+
+    #logo-title {
+        font-size: 1.6rem;
+    }
+
+    header {
+        display: block;
+        background-color: white;
+    }
+
+    .dropdown-nav {
+        width: 100%;
+        display: none; /* change to none to close dropdown nav */
+        background-color: white;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid lightgray;
+        position: absolute;
+        left: 0;
+        box-shadow: 0px 12px 10px rgb(218, 218, 218);
+    }
+
+    .dropdown-nav a {
+        margin-top: 1.2rem;
+        padding: 0.4rem 0 0.4rem 1.2rem;
+        display: block;
+        font-size: 1.3rem;
+    }
+
+    .drop-container {
+        display: flex;
+        justify-content: center;
+        margin: 0.8rem 0 0 0.8rem;
+    }
+
+    header button {
+        background-color: transparent;
+        border: none;
+        display: block;
+    }
+
+    #hamburger {
+        width: 2.4rem;
+        height: 2.4rem;
+        margin: 0.8rem 0.4rem 0 0;
+    }
+
+    .checkout-container {
+        flex-direction: column;
+    }
+
+    .account-tile-container {
+        flex-direction: column;
+    }
+
+    .filters {
+        padding: 0.4rem;
+    }
+
+    .tile-container {
+        margin-top: 0.4rem;
+    }
+
+    .filter-heading {
+        margin-top: 0.4rem;
+        margin-bottom: 0;
+    }
+
+    .filters form {
+        display: none;
+    } 
+
+    .enter-store {
+        margin-top: 1rem;
+    }
+}

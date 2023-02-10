@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head'); %>
+    </head>
+
+    <body> 
+        <header>
+
+            <% if (userData.loggedIn) { %>
+
+                <%- include('./partials/header-logged-in'); %>
+
+            <%  } else { %>
+
+                <%- include('./partials/header-logged-out'); %>
+
+            <%  } %>
+
+        </header>
+
+        <% if (userData.username) { %>
+
+            <div class="sub-header">You are logged in as <%= userData.username %>.</div>
+
+        <%  } else { %>
+
+            <div class="sub-header"><a href="/login">Login</a>&#160;to checkout.</div>
+
+        <%  } %>
+
+        <div class="table-container">
+            <table>
+                
+
+                    <% if ((cart === undefined) || (cart[0] === undefined)) { %>
+
+                        <tr>
+                            <td>Your cart is currently empty.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="/products">Continue shopping</a>
+                            </td>
+                        </tr>
+
+                    <% } else { %>
+
+                        <thead>
+                            <tr class="table-header">
+                                <th>Quantity</th>
+                                <th>Item</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                        <%   cart.forEach((itemInCart) => { %>
+
+                        <tr>
+                            <td class="quantity-col">
+                                <form action="/updatecart" method="get" >
+                                    <input type="hidden" name="product_id" value="<%= itemInCart.product_id%>" />
+                                    <input type="submit" name="update_quantity" value="-" />
+                                </form>       
+                                    <%= itemInCart.quantity %>
+                                <form action="/updatecart" method="get">
+                                    <input type="hidden" name="product_id" value="<%= itemInCart.product_id%>" />
+                                    <input type="submit" name="update_quantity" value="+" />
+                                </form>
+                            </td>
+                            <td><%= itemInCart.name %></td>
+                            <td>$<%= itemInCart.price %></td> 
+                        </tr>
+
+                        <%  }) %>
+                    <%  } %>
+
+                </tbody>
+
+
+                <tfoot>
+
+                    <% if (total !== undefined) { %>
+
+                        <tr>
+                            <td></td>
+                            <td class="bold total-col">Total</td>
+                            <td class="bold">$<%= (total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");  %></td>
+                        </tr>
+
+                    <%  } %>
+
+                </tfoot>
+            </table>
+
+           
+        </div>
+        
+        <div class="to-checkout-container">
+
+            <form action="checkout" method="post">
+                <input type="hidden" name="total" value="<%= total %>">
+                <input type="hidden" name="username" value="<%= userData.username %>">
+                <input class="submit" type="submit" value="Proceed to Checkout">
+            </form>
+        </div>
+
+      
+        
+      <script src="/js/dropdown.js" type="text/javascript"></script>  
+    </body>

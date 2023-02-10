@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head'); %>
+    </head>
+
+    <body> 
+        <header>
+
+            <% if (userData.loggedIn) { %>
+
+                <%- include('./partials/header-logged-in'); %>
+
+            <%  } else { %>
+
+                <%- include('./partials/header-logged-out'); %>
+
+            <%  } %>
+
+        </header>
+        <div class="sub-header"></div>
+
+
+        <div class="account-banner">
+            <h2 class="account-hello">Hello, <%= userData.username %>. </h2>
+            
+            <div class="account-tile-container">
+                <a href="/orders" class="account-tiles">
+                    <img src="/imgs/orders-table.png" alt="shopping cart icon">
+                    <span>Your Orders</span>
+                </a>
+
+                <a href="/products" class="account-tiles">
+                    <img src="/imgs/phone-icon.png" alt="shopping cart icon">
+                    <span>Shop</span>
+                </a>
+
+
+        </div>
+
+
+
+        </div>
+
+       
+            
+            
+        
+        
+      <script src="/js/dropdown.js" type="text/javascript"></script>  
+    </body>
+  </html>
